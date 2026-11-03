@@ -54,7 +54,15 @@ The weight analysis, both edits and the practice evaluations were done by Codex 
 | **Edit 1:** `output_norm.weight[1960]` × 0.9 | 69/100 | 9 / 5 | 1 |
 | Edit 2: `blk.27.ffn_down.weight` row 1960 × 0.9 | 69/100 | 8 / 4 | 5,952 |
 
-Neither gain is statistically clear yet. Held-out results on the other 400 problems: pending.
+Neither gain is statistically clear yet. Held-out results on the other 400 problems (same seed and settings):
+
+| Model | Held-out score | Fixed / broken | Sign test p |
+|---|---:|---:|---:|
+| Unchanged | 271/400 = 67.8% | — | — |
+| Edit 1 | 277/400 = 69.2% | 35 / 29 | 0.53 |
+| Edit 2 | 270/400 = 67.5% | 23 / 24 | 1.00 |
+
+Neither edit beats the unchanged model on unseen problems. Breakdown by level and subject: [`results/heldout_weight_edits_summary.md`](results/heldout_weight_edits_summary.md).
 
 Rebuild the edited model (`qwen3-edit-best`, edit 1):
 
