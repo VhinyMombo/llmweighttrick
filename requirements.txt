@@ -1,0 +1,4 @@
+requests
+math-verify
+gguf
+numpy
