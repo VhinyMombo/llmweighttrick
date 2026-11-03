@@ -20,13 +20,14 @@ SAMPLING = {
 }
 
 
-def ask(model, problem, mode, num_predict):
+def ask(model, problem, mode, num_predict, seed=None):
     r = requests.post("http://localhost:11434/api/chat", json={
         "model": model,
         "messages": [{"role": "user", "content": PROMPT.format(problem=problem)}],
         "think": mode == "think",
         "stream": False,
-        "options": {**SAMPLING[mode], "num_ctx": num_predict + 1024, "num_predict": num_predict},
+        "options": {**SAMPLING[mode], "num_ctx": num_predict + 1024, "num_predict": num_predict,
+                    **({"seed": seed} if seed is not None else {})},
     }, timeout=3600)
     r.raise_for_status()
     d = r.json()
@@ -46,13 +47,18 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--num-predict", type=int, default=None)
+    ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--split", choices=["all", "practice", "heldout"], default="all",
+                    help="practice = rows with index %% 5 == 0; heldout = the other 400")
+    ap.add_argument("--tag", default="", help="suffix for the results file")
     a = ap.parse_args()
     num_predict = a.num_predict or (16384 if a.mode == "think" else 4096)
 
     here = os.path.dirname(os.path.abspath(__file__))
-    rows = [json.loads(l) for l in open(os.path.join(here, "data/math500/test.jsonl"))][: a.limit]
+    rows = [json.loads(l) for i, l in enumerate(open(os.path.join(here, "data/math500/test.jsonl")))
+            if a.split == "all" or (i % 5 == 0) == (a.split == "practice")][: a.limit]
     os.makedirs(os.path.join(here, "results"), exist_ok=True)
-    out = os.path.join(here, "results", f"{a.model.replace(':', '_')}_{a.mode}.jsonl")
+    out = os.path.join(here, "results", f"{a.model.replace(':', '_')}_{a.mode}{'_' + a.split if a.split != 'all' else ''}{a.tag}.jsonl")
 
     done = {}
     if os.path.exists(out):
@@ -65,7 +71,7 @@ def main():
     t0 = time.time()
 
     def work(r):
-        content, ntok = ask(a.model, r["problem"], a.mode, num_predict)
+        content, ntok = ask(a.model, r["problem"], a.mode, num_predict, a.seed)
         return r, content, ntok
 
     with ThreadPoolExecutor(a.workers) as ex, open(out, "a") as f:

@@ -24,7 +24,12 @@ ollama pull qwen3:1.7b
 .venv/bin/python bench_math.py --mode nothink            # all 500, non-thinking
 .venv/bin/python bench_math.py --mode think --limit 50   # thinking mode, sample
 .venv/bin/python bench_math.py --model llama3 --mode nothink
+.venv/bin/python bench_math.py --split heldout --seed 1 --workers 1   # 400 held-out problems, reproducible
 ```
+
+- `--split practice` selects every 5th problem (index % 5 == 0, 100 problems); `--split heldout` selects the other 400.
+- `--seed` fixes Ollama's sampling seed so two models can be compared on identical settings.
+- `--tag` adds a suffix to the results file name.
 
 - Sampling follows Qwen3's recommendations (think: T=0.6, top_p=0.95; non-think: T=0.7, top_p=0.8; top_k=20).
 - Results are appended to `results/<model>_<mode>.jsonl`; re-running resumes where it stopped.
