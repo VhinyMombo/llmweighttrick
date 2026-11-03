@@ -2,6 +2,8 @@
 
 Make `qwen3:1.7b` (Ollama, Q4_K_M) better at math by editing its weights by hand. No training, no gradients, no internet.
 
+The weight analysis, both edits and the practice evaluations were done by Codex (GPT-6.1-Sol), working offline under the rules below. It built on an earlier session's setup: the GGUF read/write pipeline, the NumPy forward pass and the first 3 forward passes.
+
 ## Results (100 practice problems, non-thinking, seed 1)
 
 | Model | Score | Fixed / broken vs. unchanged | Weights changed |

@@ -46,6 +46,8 @@ Full MATH-500, unchanged `qwen3:1.7b`, non-thinking: **336/500 = 67.2%**. Breakd
 
 Can hand-editing the weights, with no training and no gradients, make `qwen3:1.7b` better at math? Code and notes are in [`weight_edit/`](weight_edit/).
 
+The weight analysis, both edits and the practice evaluations were done by Codex (GPT-6.1-Sol), working offline under the rules below. It built on an earlier session's setup: the GGUF read/write pipeline, the NumPy forward pass and the first 3 forward passes.
+
 | Model | Practice score (100 problems) | Fixed / broken | Weights changed |
 |---|---:|---:|---:|
 | Unchanged | 65/100 | — | 0 |
