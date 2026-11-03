@@ -1,0 +1,1 @@
+{'tensor': 'blk.27.ffn_down.weight', 'row': 1960, 'intended_scale': 0.9, 'changed_parameters': 5952, 'touched_parameters': 6144, 'changed_raw_bytes': 30, 'block_scales_changed': 24, 'max_error_from_exact_scaling': 0.0001220703125, 'row_relative_rounding_error': 0.0006252279854379594, 'gguf': '$SCRATCH/ggufs/ffnrow10.gguf'}

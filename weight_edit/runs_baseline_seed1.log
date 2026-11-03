@@ -1,0 +1,178 @@
+qwen3:1.7b: 100 problems, 0 done, 100 to run -> /Users/vhinymombo/learning/llmweighttrick/weight_edit/runs/baseline_seed1.jsonl
+[1/100] wrong_answer   acc=0/1 tok=1542 gold='6 - 5i' pred='w = -\\frac{3\\sqrt{2}' 64s
+[2/100] correct        acc=1/2 tok=343 gold='\\left( 3, \\frac{\\pi}' pred='(3, \\frac{\\pi}{2})' 67s
+[3/100] correct        acc=2/3 tok=283 gold='42' pred='42' 71s
+[4/100] correct        acc=3/4 tok=513 gold='2220' pred='2220' 77s
+[5/100] correct        acc=4/5 tok=151 gold='6+9i' pred='6 + 9i' 106s
+[6/100] correct        acc=5/6 tok=943 gold='1,-2' pred='-2, 1' 117s
+[7/100] correct        acc=6/7 tok=277 gold='52_8' pred='52_8' 121s
+[8/100] correct        acc=7/8 tok=347 gold='3' pred='3' 125s
+[9/100] correct        acc=8/9 tok=277 gold='12' pred='12' 152s
+[10/100] correct        acc=9/10 tok=426 gold='2' pred='2' 157s
+[11/100] wrong_answer   acc=9/11 tok=1013 gold='203' pred='35' 169s
+[12/100] correct        acc=10/12 tok=332 gold='3' pred='3' 173s
+[13/100] wrong_answer   acc=10/13 tok=2790 gold='(6,31,-1)' pred='(p, q, r) = (p, q, 0' 276s
+[14/100] correct        acc=11/14 tok=177 gold='1' pred='1' 278s
+[15/100] correct        acc=12/15 tok=394 gold='40_9' pred='40_9' 284s
+[16/100] wrong_answer   acc=12/16 tok=406 gold='\\frac{11}{36}' pred='\\frac{13}{36}' 289s
+[17/100] wrong_answer   acc=12/17 tok=1304 gold='501' pred='0' 340s
+[18/100] correct        acc=13/18 tok=393 gold='\\sqrt{5}' pred='\\sqrt{5}' 346s
+[19/100] correct        acc=14/19 tok=221 gold='\\frac{3}{2}' pred='\\frac{3}{2}' 349s
+[20/100] correct        acc=15/20 tok=693 gold='-4' pred='-4' 358s
+[21/100] wrong_answer   acc=15/21 tok=1704 gold='145^\\circ' pred='70^\\circ' 402s
+[22/100] wrong_answer   acc=15/22 tok=324 gold='29' pred='24' 406s
+[23/100] truncated      acc=15/23 tok=4096 gold='504' pred='\\frac{7}{27}' 472s
+[24/100] wrong_answer   acc=15/24 tok=377 gold='1260' pred='360' 477s
+[25/100] wrong_answer   acc=15/25 tok=577 gold='\\text{even}' pred='\\text{odd}' 550s
+[26/100] correct        acc=16/26 tok=188 gold='-3' pred='-3' 553s
+[27/100] wrong_answer   acc=16/27 tok=846 gold='13' pred='17' 565s
+[28/100] correct        acc=17/28 tok=527 gold='9' pred='9' 573s
+[29/100] correct        acc=18/29 tok=649 gold='13' pred='13' 616s
+[30/100] wrong_answer   acc=18/30 tok=3004 gold='-2' pred='\\frac{1 + \\sqrt{5}}{' 654s
+[31/100] wrong_answer   acc=18/31 tok=2348 gold='1' pred='4' 682s
+[32/100] correct        acc=19/32 tok=488 gold='\\frac{1}{4}' pred='\\frac{1}{4}' 688s
+[33/100] correct        acc=20/33 tok=504 gold='18' pred='18' 744s
+[34/100] correct        acc=21/34 tok=312 gold='\\frac{4}{9}' pred='\\frac{4}{9}' 748s
+[35/100] wrong_answer   acc=21/35 tok=1562 gold='1736' pred='8264' 767s
+[36/100] correct        acc=22/36 tok=1170 gold='3' pred='3' 781s
+[37/100] wrong_answer   acc=22/37 tok=274 gold='3' pred='2' 836s
+[38/100] correct        acc=23/38 tok=159 gold='1' pred='1' 881s
+[39/100] wrong_answer   acc=23/39 tok=613 gold='\\frac{13}{18}' pred='\\frac{5}{9}' 891s
+[40/100] correct        acc=24/40 tok=478 gold='24' pred='24' 898s
+[41/100] correct        acc=25/41 tok=346 gold='40' pred='40' 950s
+[42/100] truncated      acc=25/42 tok=4096 gold='\\begin{pmatrix} -2 \\' pred='0' 1044s
+[43/100] correct        acc=26/43 tok=373 gold='10' pred='10' 1050s
+[44/100] correct        acc=27/44 tok=445 gold='2' pred='2' 1101s
+[45/100] correct        acc=28/45 tok=566 gold='\\frac{16}{27}' pred='\\frac{16}{27}' 1238s
+Traceback (most recent call last):
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 540, in _make_request
+    response = conn.getresponse()
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connection.py", line 638, in getresponse
+    httplib_response = super().getresponse()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1430, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 510, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 540, in _make_request
+    response = conn.getresponse()
+  File "$SCRATCH/venv/lib/python3.13/site-packages/urllib3/connection.py", line 638, in getresponse
+    httplib_response = super().getresponse()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1430, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 115, in <module>
+    main()
+    ~~~~^^
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 92, in main
+    r, content, ntok, why = fu.result()
+                            ~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 86, in work
+    content, ntok, why = ask(a.model, r["problem"], a.num_predict, a.seed)
+                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 20, in ask
+    r = requests.post("http://localhost:11434/api/chat", json={
+        "model": model,
+    ...<2 lines>...
+        "options": {**SAMPLING, "seed": seed, "num_ctx": num_predict + 1024, "num_predict": num_predict},
+    }, timeout=3600)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/adapters.py", line 711, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 115, in <module>
+    main()
+    ~~~~^^
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 92, in main
+    r, content, ntok, why = fu.result()
+                            ~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 86, in work
+    content, ntok, why = ask(a.model, r["problem"], a.num_predict, a.seed)
+                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vhinymombo/learning/llmweighttrick/weight_edit/eval_practice.py", line 20, in ask
+    r = requests.post("http://localhost:11434/api/chat", json={
+        "model": model,
+    ...<2 lines>...
+        "options": {**SAMPLING, "seed": seed, "num_ctx": num_predict + 1024, "num_predict": num_predict},
+    }, timeout=3600)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "$SCRATCH/venv/lib/python3.13/site-packages/requests/adapters.py", line 711, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))

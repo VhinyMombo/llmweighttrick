@@ -1,0 +1,56 @@
+GGUF.version = 3
+GGUF.tensor_count = 311
+GGUF.kv_count = 27
+general.architecture = qwen3
+general.type = model
+general.name = Qwen3 1.7B
+general.basename = Qwen3
+general.size_label = 1.7B
+qwen3.block_count = 28
+qwen3.context_length = 40960
+qwen3.embedding_length = 2048
+qwen3.feed_forward_length = 6144
+qwen3.attention.head_count = 16
+qwen3.attention.head_count_kv = 8
+qwen3.rope.freq_base = 1e+06
+qwen3.attention.layer_norm_rms_epsilon = 1e-06
+qwen3.attention.key_length = 128
+qwen3.attention.value_length = 128
+tokenizer.ggml.model = gpt2
+tokenizer.ggml.pre = qwen2
+tokenizer.ggml.tokens len 151936
+tokenizer.ggml.token_type len 151936
+tokenizer.ggml.merges len 151387
+tokenizer.ggml.eos_token_id = 151645
+tokenizer.ggml.padding_token_id = 151643
+tokenizer.ggml.bos_token_id = 151643
+tokenizer.ggml.add_bos_token = False
+tokenizer.chat_template len 4116
+general.quantization_version = 2
+general.file_type = 15
+Counter({'Q4_K': 155, 'F32': 113, 'F16': 28, 'Q6_K': 15})
+output.weight                    [np.uint64(2048), np.uint64(151936)] Q6_K   311164928
+output_norm.weight               [np.uint64(2048)] F32    2048
+token_embd.weight                [np.uint64(2048), np.uint64(151936)] Q4_K   311164928
+blk.0.attn_k.weight              [np.uint64(2048), np.uint64(1024)] Q4_K   2097152
+blk.0.attn_k_norm.weight         [np.uint64(128)] F32    128
+blk.0.attn_norm.weight           [np.uint64(2048)] F32    2048
+blk.0.attn_output.weight         [np.uint64(2048), np.uint64(2048)] Q4_K   4194304
+blk.0.attn_q.weight              [np.uint64(2048), np.uint64(2048)] Q4_K   4194304
+blk.0.attn_q_norm.weight         [np.uint64(128)] F32    128
+blk.0.attn_v.weight              [np.uint64(2048), np.uint64(1024)] F16    2097152
+blk.0.ffn_down.weight            [np.uint64(6144), np.uint64(2048)] Q6_K   12582912
+blk.0.ffn_gate.weight            [np.uint64(2048), np.uint64(6144)] Q4_K   12582912
+blk.0.ffn_norm.weight            [np.uint64(2048)] F32    2048
+blk.0.ffn_up.weight              [np.uint64(2048), np.uint64(6144)] Q4_K   12582912
+blk.27.attn_k.weight             [np.uint64(2048), np.uint64(1024)] Q4_K   2097152
+blk.27.attn_k_norm.weight        [np.uint64(128)] F32    128
+blk.27.attn_norm.weight          [np.uint64(2048)] F32    2048
+blk.27.attn_output.weight        [np.uint64(2048), np.uint64(2048)] Q4_K   4194304
+blk.27.attn_q.weight             [np.uint64(2048), np.uint64(2048)] Q4_K   4194304
+blk.27.attn_q_norm.weight        [np.uint64(128)] F32    128
+blk.27.attn_v.weight             [np.uint64(2048), np.uint64(1024)] F16    2097152
+blk.27.ffn_down.weight           [np.uint64(6144), np.uint64(2048)] Q6_K   12582912
+blk.27.ffn_gate.weight           [np.uint64(2048), np.uint64(6144)] Q4_K   12582912
+blk.27.ffn_norm.weight           [np.uint64(2048)] F32    2048
+blk.27.ffn_up.weight             [np.uint64(2048), np.uint64(6144)] Q4_K   12582912

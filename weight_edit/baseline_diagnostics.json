@@ -1,0 +1,61 @@
+{
+  "missing_boxed": 2,
+  "loop_metric_over_point2": 0,
+  "truncated": [
+    "test/intermediate_algebra/345.json",
+    "test/precalculus/263.json",
+    "test/intermediate_algebra/1411.json"
+  ],
+  "by_subject": {
+    "Algebra": {
+      "correct": 19,
+      "n": 20
+    },
+    "Counting & Probability": {
+      "correct": 4,
+      "n": 9
+    },
+    "Geometry": {
+      "correct": 4,
+      "n": 6
+    },
+    "Intermediate Algebra": {
+      "correct": 7,
+      "n": 18
+    },
+    "Number Theory": {
+      "correct": 11,
+      "n": 16
+    },
+    "Prealgebra": {
+      "correct": 13,
+      "n": 18
+    },
+    "Precalculus": {
+      "correct": 7,
+      "n": 13
+    }
+  },
+  "by_level": {
+    "1": {
+      "correct": 5,
+      "n": 5
+    },
+    "2": {
+      "correct": 17,
+      "n": 21
+    },
+    "3": {
+      "correct": 12,
+      "n": 17
+    },
+    "4": {
+      "correct": 22,
+      "n": 30
+    },
+    "5": {
+      "correct": 9,
+      "n": 27
+    }
+  }
+}

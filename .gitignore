@@ -1,7 +1,10 @@
 data/
 results/*
 !results/*_summary.md
-weight_edit/
+weight_edit/runs/
+weight_edit/__pycache__/
+weight_edit/*.npz
+weight_edit/practice.json
 __pycache__/
 .venv/
 venv/

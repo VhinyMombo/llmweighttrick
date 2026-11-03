@@ -1,0 +1,19 @@
+{'id': 'test/prealgebra/1908.json', 'correct': False, 'tokens': 324}
+{'id': 'test/prealgebra/1804.json', 'correct': False, 'tokens': 640}
+{'id': 'test/counting_and_probability/1060.json', 'correct': False, 'tokens': 425}
+{'id': 'test/counting_and_probability/1114.json', 'correct': False, 'tokens': 474}
+{'id': 'test/prealgebra/874.json', 'correct': False, 'tokens': 640}
+{'id': 'test/intermediate_algebra/128.json', 'correct': False, 'tokens': 640}
+{'id': 'test/counting_and_probability/51.json', 'correct': False, 'tokens': 640}
+{'id': 'test/number_theory/753.json', 'correct': False, 'tokens': 640}
+{'id': 'test/algebra/1098.json', 'correct': True, 'tokens': 194}
+{'id': 'test/algebra/1214.json', 'correct': True, 'tokens': 207}
+{'id': 'test/prealgebra/1747.json', 'correct': True, 'tokens': 227}
+{'id': 'test/algebra/2232.json', 'correct': True, 'tokens': 248}
+{'id': 'test/algebra/346.json', 'correct': True, 'tokens': 268}
+{'id': 'test/prealgebra/1761.json', 'correct': True, 'tokens': 294}
+{'id': 'test/prealgebra/153.json', 'correct': True, 'tokens': 326}
+{'id': 'test/number_theory/864.json', 'correct': True, 'tokens': 331}
+replaced output_norm.weight (F32)
+wrote $SCRATCH/ggufs/norm10.gguf 1359279776
+{'sequences': [{'id': 'test/prealgebra/1908.json', 'correct': False, 'tokens': 324}, {'id': 'test/prealgebra/1804.json', 'correct': False, 'tokens': 640}, {'id': 'test/counting_and_probability/1060.json', 'correct': False, 'tokens': 425}, {'id': 'test/counting_and_probability/1114.json', 'correct': False, 'tokens': 474}, {'id': 'test/prealgebra/874.json', 'correct': False, 'tokens': 640}, {'id': 'test/intermediate_algebra/128.json', 'correct': False, 'tokens': 640}, {'id': 'test/counting_and_probability/51.json', 'correct': False, 'tokens': 640}, {'id': 'test/number_theory/753.json', 'correct': False, 'tokens': 640}, {'id': 'test/algebra/1098.json', 'correct': True, 'tokens': 194}, {'id': 'test/algebra/1214.json', 'correct': True, 'tokens': 207}, {'id': 'test/prealgebra/1747.json', 'correct': True, 'tokens': 227}, {'id': 'test/algebra/2232.json', 'correct': True, 'tokens': 248}, {'id': 'test/algebra/346.json', 'correct': True, 'tokens': 268}, {'id': 'test/prealgebra/1761.json', 'correct': True, 'tokens': 294}, {'id': 'test/prealgebra/153.json', 'correct': True, 'tokens': 326}, {'id': 'test/number_theory/864.json', 'correct': True, 'tokens': 331}], 'dimension': 1960, 'wrong_rms': 5.3856306076049805, 'right_rms': 5.071315765380859, 'old': 10.3125, 'new': 9.28125, 'top_dimensions': [1960, 1446, 1536, 47, 1342, 1645, 153, 559, 1321, 232, 1945, 578], 'changed_parameters': 1, 'total_parameters': 2031739904}

@@ -1,0 +1,5 @@
+load 18.0 s
+forward 194 tokens 18.3 s
+teacher-forced top1 acc on response tokens: 0.993 (150 tokens)
+top5 acc: 1.000
+mean NLL of response tokens: 0.039
