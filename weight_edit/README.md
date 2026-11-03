@@ -16,6 +16,18 @@ Neither gain is statistically clear (sign test p ≈ 0.42 and 0.39). Held-out re
 
 `qwen3-edit-best` is edit 1: a single F32 value changed from 10.3125 to 9.28125. All other 310 tensors are byte-identical to the original.
 
+## Process
+
+1. **Check the pipeline.** Read the original GGUF and write it back unchanged. All 311 tensors and all metadata came out byte-identical, and the copy matched the original on 99/100 practice answers with the same seed.
+2. **Build a NumPy copy of the model** (`qwen3_np.py`) to read internal activations. It agreed with llama.cpp on 99.3% of next-token predictions.
+3. **Run the unchanged model** on the 100 practice problems: 65 correct, 32 wrong answers, 3 cut off at the token limit.
+4. **Compare failures with successes.** Feed 8 failed and 8 correct answers back through the NumPy model (first 640 tokens each) and measure each coordinate of the final residual stream. Coordinate 1960 had the largest excess energy in failed answers, weighted by how strongly it feeds the output layer.
+5. **Edit 1.** Scale the final normalisation gain for that coordinate by 0.9 (`output_norm.weight[1960]`, 10.3125 → 9.28125). One weight changed, stored as F32, so no re-quantization.
+6. **Find who writes it.** Record every layer's writes to coordinate 1960 (`trace_layers.py`). The block 27 MLP is by far the largest writer.
+7. **Edit 2.** Scale row 1960 of `blk.27.ffn_down.weight` by 0.9. The tensor is Q6_K, so only the 24 FP16 block scales of that row change; the integer codes stay the same.
+8. **Evaluate each edit** on the same 100 practice problems with the same seed, and check it still answers a non-math prompt normally.
+9. **Keep the best.** Both scored 69/100; the tie keeps edit 1 as `qwen3-edit-best` because it changes fewer weights.
+
 ## Rules
 
 - Practice set: MATH-500 rows with `index % 5 == 0` (100 problems). The other 400 are held out.
