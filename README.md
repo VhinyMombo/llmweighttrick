@@ -38,6 +38,30 @@ ollama pull qwen3:1.7b
 Note: Ollama's `qwen3:1.7b` is mostly Q4_K quantized, so scores are expected to be a bit
 below the full-precision numbers in the Qwen3 technical report.
 
+## Results
+
+Full MATH-500, unchanged `qwen3:1.7b`, non-thinking: **336/500 = 67.2%**. Breakdown in [`results/qwen3_1.7b_nothink_summary.md`](results/qwen3_1.7b_nothink_summary.md).
+
+## Direct weight editing
+
+Can hand-editing the weights, with no training and no gradients, make `qwen3:1.7b` better at math? Code and notes are in [`weight_edit/`](weight_edit/).
+
+| Model | Practice score (100 problems) | Fixed / broken | Weights changed |
+|---|---:|---:|---:|
+| Unchanged | 65/100 | — | 0 |
+| **Edit 1:** `output_norm.weight[1960]` × 0.9 | 69/100 | 9 / 5 | 1 |
+| Edit 2: `blk.27.ffn_down.weight` row 1960 × 0.9 | 69/100 | 8 / 4 | 5,952 |
+
+Neither gain is statistically clear yet. Held-out results on the other 400 problems: pending.
+
+Rebuild the edited model (`qwen3-edit-best`, edit 1):
+
+```bash
+export SCRATCH=~/llmweighttrick-scratch
+.venv/bin/python weight_edit/rebuild_best.py --register
+.venv/bin/python bench_math.py --model qwen3-edit-best --split heldout --seed 1 --workers 1
+```
+
 ## Reading the raw weights
 
 Ollama stores each model as a GGUF blob under `~/.ollama/models/blobs/`.
