@@ -1,5 +1,7 @@
 data/
-results/
+results/*
+!results/*_summary.md
+weight_edit/
 __pycache__/
 .venv/
 venv/
